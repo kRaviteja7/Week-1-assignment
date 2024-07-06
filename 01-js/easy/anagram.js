@@ -8,6 +8,12 @@
 */
 
 function isAnagram(str1, str2) {
+  const normalize = str => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+  const sortedStr1 = normalize(str1).split('').sort().join('');
+  const sortedStr2 = normalize(str2).split('').sort().join('');
+
+  return sortedStr1 === sortedStr2;
 
 }
 
